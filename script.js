@@ -26,26 +26,36 @@ btn.addEventListener('click', function (e) {
         console.log("fuck")
     }
 });
-const labelTimer = document.querySelector('#labelTimer');
-const message = document.querySelector('.message');
-const startLogOutTimer = function () {
 
-    let time = 11;
+//---------------------------- timer --------------------------
+
+const labelTimer = document.querySelector('#labelTimer');
+const message = document.querySelector('#countdown-end');
+let inputValue = document.querySelector('#timer-value');
+const triggerTimer = document.querySelector('#trigger-timer');
+let stateEnd = false;
+triggerTimer.addEventListener('click', function(){
+    stateEnd = false;
+    startLogOutTimer(inputValue.value)
+    
+})
+
+const startLogOutTimer = function (t) {
+    let time = t;
+  
+
     const timer = setInterval(() => {
         const min = Math.trunc(time / 60);
         const sec = time % 60;
-        labelTimer.textContent = `${min < 10 ? "0" + min : min}:${sec < 10 ? "0" + sec : sec};`
+        console.log(`${time} = ${min < 10 ? "0" + min : min}:${sec < 10 ? "0" + sec : sec}`)
+        labelTimer.textContent = `${min < 10 ? "0" + min : min}:${sec < 10 ? "0" + sec : sec}`
         time--;
-        console.log(time);
 
         if (time <= -1) {
+            stateEnd = true;
+            console.log(stateEnd);
             clearInterval(timer);
             console.log("time's up!!!");
-            message.textContent= "Bang !!!";
         }
     }, 1000);
-
-
 }
-
-startLogOutTimer();

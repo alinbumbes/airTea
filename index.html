@@ -6,32 +6,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>testMe</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="main.css">
     <script defer src="script.js"></script>
 </head>
 
 <body>
     <div class="container-fluid">
-        <div class="card text-center">
-            <div class="card-header">
-                Featured
+        <h1 class="mb-5 mt-5 text-center">Play with classes</h1>
+        
+        
+        
+        <div class="d-flex gap-4 justify-content-center flex-wrap">
+            <div class="card text-center w-300"> <!-- timer experiment -->
+                <div class="card-header">timer </div>
+                <div class="card-body">
+                    <h5 class="card-title">Time out in: <span id="labelTimer"></span></h5>
+                    <p class="card-text" id="countdown-end"></p>
+                    <div class="d-flex gap-3 justify-content-center align-items-center mb-3">
+                        <label class="">set timer value</label>
+                        <input type="number" name="timer" id="timer-value" class="form-control w-50 rounded-pill">
+                    </div>
+                    <button id="trigger-timer" class="btn btn-primary">start timer</button>
+                </div>
             </div>
-            <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-            <div class="card-footer text-muted">
-                2 days ago
+
+            <div class="card text-center w-300">
+                <div class="card-header">card 2 </div>
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <button id="showEv" class="btn btn-primary">click here</button>
+                   
+                </div>
             </div>
         </div>
+
+
+
     </div>
-
-    <button id="showEv">click me</button>
-
-    <p> time expires in <span id="labelTimer"></span></p>
-    <p class="message"></p>
-
 </body>
 
 </html>
